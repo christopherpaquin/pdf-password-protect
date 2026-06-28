@@ -2,14 +2,49 @@
 
 A Python script that batch password-protects PDF files using AES-256 encryption.
 
-## Requirements
+## Prerequisites
 
-- Python 3.8+
-- [pikepdf](https://pikepdf.readthedocs.io/)
+### Python 3.8+
 
-Install the dependency:
+Check whether Python is already installed:
 
 ```bash
+python3 --version
+```
+
+If it is not installed:
+
+- **macOS**: `brew install python` (requires [Homebrew](https://brew.sh))
+- **Ubuntu / Debian**: `sudo apt install python3 python3-pip`
+- **Windows**: Download the installer from [python.org](https://www.python.org/downloads/) and ensure "Add Python to PATH" is checked during setup.
+
+### pip
+
+pip is included with Python 3.4+. Verify it is available:
+
+```bash
+pip3 --version
+```
+
+If it is missing, install it with:
+
+```bash
+python3 -m ensurepip --upgrade
+```
+
+### pikepdf
+
+Install the only third-party dependency:
+
+```bash
+pip install pikepdf
+```
+
+pikepdf requires no additional system libraries on most platforms. On Linux you may need to install `libqpdf` if the pip wheel is not available for your architecture:
+
+```bash
+# Ubuntu / Debian
+sudo apt install libqpdf-dev
 pip install pikepdf
 ```
 
