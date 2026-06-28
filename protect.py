@@ -2,6 +2,7 @@ import sys
 import os
 import secrets
 import string
+import argparse
 
 try:
     import pikepdf
@@ -19,11 +20,14 @@ def generate_password():
 
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python protect.py /path/to/directory")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Batch password-protect PDF files with AES-256 encryption."
+    )
+    parser.add_argument("-d", dest="directory", required=True, metavar="DIRECTORY",
+                        help="Path to the directory containing PDF files to protect")
+    args = parser.parse_args()
 
-    input_dir = os.path.abspath(sys.argv[1])
+    input_dir = os.path.abspath(args.directory)
 
     if not os.path.exists(input_dir) or not os.path.isdir(input_dir):
         print(f"Error: '{input_dir}' does not exist or is not a directory.")

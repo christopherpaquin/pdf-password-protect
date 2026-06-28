@@ -51,7 +51,7 @@ pip install pikepdf
 ## Usage
 
 ```bash
-python protect.py /path/to/directory
+python protect.py -d /path/to/directory
 ```
 
 The script processes every `.pdf` file found in the specified directory.
