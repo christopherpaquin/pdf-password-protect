@@ -50,11 +50,27 @@ pip install pikepdf
 
 ## Usage
 
+The script processes every `.pdf` file found in the specified directory.
+
+### macOS / Linux
+
 ```bash
-python protect.py -d /path/to/directory
+python3 protect.py -d /path/to/bank_statements
 ```
 
-The script processes every `.pdf` file found in the specified directory.
+### Windows (Command Prompt)
+
+```bat
+python protect.py -d C:\Users\you\bank_statements
+```
+
+### Windows (PowerShell)
+
+```powershell
+python protect.py -d C:\Users\you\bank_statements
+```
+
+> **Note:** On Windows, Python is typically invoked as `python` rather than `python3`.
 
 ## Output
 
